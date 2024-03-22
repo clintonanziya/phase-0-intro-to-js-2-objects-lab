@@ -1,21 +1,24 @@
-const chai = require('chai')
-global.expect = chai.expect
-const fs = require('fs')
-const jsdom = require('mocha-jsdom')
-const path = require('path')
-const babel = require("@babel/core");
-const url = "http://localhost"
+// helpers.js
 
-const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8')
+function updateEmployeeWithKeyAndValue(employee, key, value) {
+  // Implementation here
+}
 
-const babelResult = babel.transformFileSync(
-  path.resolve(__dirname, '..', 'index.js'), {
-    presets: ['@babel/env']
-  }
-);
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
+  // Implementation here
+}
 
-const src = babelResult.code
+function deleteFromEmployeeByKey(employee, key) {
+  // Implementation here
+}
 
-jsdom({
-  html, src, url
-});
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+  // Implementation here
+}
+
+module.exports = {
+  updateEmployeeWithKeyAndValue,
+  destructivelyUpdateEmployeeWithKeyAndValue,
+  deleteFromEmployeeByKey,
+  destructivelyDeleteFromEmployeeByKey
+};
